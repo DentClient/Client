@@ -14,7 +14,8 @@ public class DentClientFabric implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		System.out.println("Hello Fabric world!");
-		GUI gui = new GUI();
+		System.out.println("Dent Client INIT");
+		System.out.println("Yoinking your IP...");
+		System.out.println("this account has been token logged by crystallinqq. 汉字漢per download phobos 1.5.4 phobos 迪汉字emp字漢");
 	}
 }
