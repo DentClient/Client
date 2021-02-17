@@ -1,15 +1,15 @@
-package cn.enaium.foxbase.module.modules.render;
+package net.dent.client.module.modules.render;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.event.EventTarget;
-import cn.enaium.foxbase.event.events.EventKeyboard;
-import cn.enaium.foxbase.event.events.EventRender2D;
-import cn.enaium.foxbase.module.Category;
-import cn.enaium.foxbase.module.Module;
-import cn.enaium.foxbase.setting.Setting;
-import cn.enaium.foxbase.utils.ColorUtils;
-import cn.enaium.foxbase.utils.FontUtils;
-import cn.enaium.foxbase.utils.Render2D;
+import net.dent.client.DentClient;
+import net.dent.client.event.EventTarget;
+import net.dent.client.event.events.EventKeyboard;
+import net.dent.client.event.events.EventRender2D;
+import net.dent.client.module.Category;
+import net.dent.client.module.Module;
+import net.dent.client.setting.Setting;
+import net.dent.client.utils.ColorUtils;
+import net.dent.client.utils.FontUtils;
+import net.dent.client.utils.Render2D;
 import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFW;
 
@@ -27,7 +27,7 @@ public class HUD extends Module {
     private int screen;
 
     private Setting tabGUI = new Setting(this, "TabGUI", true);
-    private Setting toggleList = new Setting(this, "ToggleList", true);
+    private Setting activeMods = new Setting(this, "activeModss", true);
 
     public HUD() {
         super("HUD", GLFW.GLFW_KEY_P, Category.RENDER);
@@ -39,19 +39,19 @@ public class HUD extends Module {
         this.screen = 0;
         this.categoryValues.addAll(Arrays.asList(Category.values()));
         addSetting(tabGUI);
-        addSetting(toggleList);
+        addSetting(activeMods);
     }
 
     @EventTarget
-    public void toggleList(EventRender2D e) {
-        if (!this.toggleList.isToggle()) {
+    public void activeMods(EventRender2D e) {
+        if (!this.activeMods.isToggle()) {
             return;
         }
 
         int yStart = 1;
 
         ArrayList<Module> modules = new ArrayList();
-        for (Module m : FoxBase.instance.moduleManager.getModules()) {
+        for (Module m : DentClient.instance.moduleManager.getModules()) {
             if (m.isToggle()) {
                 modules.add(m);
             }
@@ -82,8 +82,8 @@ public class HUD extends Module {
             return;
         }
 
-        FontUtils.drawStringWithShadow(e.getMatrixStack(), FoxBase.instance.name + " B"
-                + FoxBase.instance.version, 5, 5, new Color(67, 0, 99).getRGB());
+        FontUtils.drawStringWithShadow(e.getMatrixStack(), DentClient.instance.name + " B"
+                + DentClient.instance.version, 5, 5, new Color(67, 0, 99).getRGB());
         int startX = 5;
         int startY = (5 + 9) + 2;
         Render2D.drawRect(e.getMatrixStack(), startX, startY, startX + this.getWidestCategory() + 5,
@@ -110,7 +110,7 @@ public class HUD extends Module {
                     Render2D.drawRect(e.getMatrixStack(), startModsX + 1, startModsY, startModsX + this.getWidestMod() + 5 - 1,
                             startModsY + 9 + 2, ColorUtils.SELECT);
                 }
-                FontUtils.drawStringWithShadow(e.getMatrixStack(), m.getName() + (FoxBase.instance.settingManager.getSettingsForModule(m) != null ? ">" : ""), startModsX + 2 + (this.getCurrentModule().equals(m) ? 2 : 0),
+                FontUtils.drawStringWithShadow(e.getMatrixStack(), m.getName() + (DentClient.instance.settingManager.getSettingsForModule(m) != null ? ">" : ""), startModsX + 2 + (this.getCurrentModule().equals(m) ? 2 : 0),
                         startModsY + 2, m.isToggle() ? -1 : Color.GRAY.getRGB());
                 startModsY += 9 + 2;
             }
@@ -290,7 +290,7 @@ public class HUD extends Module {
     }
 
     private ArrayList<Setting> getSettingForCurrentMod() {
-        return FoxBase.instance.settingManager.getSettingsForModule(getCurrentModule());
+        return DentClient.instance.settingManager.getSettingsForModule(getCurrentModule());
     }
 
     private Category getCurrentCategory() {
@@ -302,7 +302,7 @@ public class HUD extends Module {
     }
 
     private ArrayList<Module> getModsForCurrentCategory() {
-        return FoxBase.instance.moduleManager.getModulesForCategory(getCurrentCategory());
+        return DentClient.instance.moduleManager.getModulesForCategory(getCurrentCategory());
     }
 
     private int getWidestSetting() {
@@ -329,7 +329,7 @@ public class HUD extends Module {
 
     private int getWidestMod() {
         int width = 0;
-        for (Module m : FoxBase.instance.moduleManager.getModules()) {
+        for (Module m : DentClient.instance.moduleManager.getModules()) {
             int cWidth = FontUtils.getStringWidth(m.getName());
             if (cWidth > width) {
                 width = cWidth;
