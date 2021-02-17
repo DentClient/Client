@@ -5,9 +5,9 @@
  * License, version 3. If a copy of the GPL was not distributed with this
  * file, You can obtain one at: https://www.gnu.org/licenses/gpl-3.0.txt
  */
-package cn.enaium.foxbase.utils;
+package net.dent.client.utils;
 
-import cn.enaium.foxbase.FoxBase;
+import net.dent.client.DentClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.text.LiteralText;
@@ -19,7 +19,7 @@ public enum ChatUtils
 	private static final MinecraftClient MC = MinecraftClient.getInstance();
 	
 	public static final String CHROME_PREFIX =
-		"\u00a7c[\u00a76" + FoxBase.instance.name + "\u00a7c]\u00a7r ";
+		"\u00a7c[\u00a76" + DentClient.instance.name + "\u00a7c]\u00a7r ";
 
 	public static void component(Text component)
 	{

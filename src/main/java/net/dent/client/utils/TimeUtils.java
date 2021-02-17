@@ -1,4 +1,4 @@
-package cn.enaium.foxbase.utils;
+package net.dent.client.utils;
 
 public class TimeUtils {
     private long lastMS = 0L;

@@ -1,6 +1,6 @@
-package cn.enaium.foxbase.mixin;
+package net.dent.client.mixin;
 
-import cn.enaium.foxbase.event.events.EventKeyboard;
+import net.dent.client.event.events.EventKeyboard;
 import net.minecraft.client.Keyboard;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,7 +1,7 @@
-package cn.enaium.foxbase.module;
+package net.dent.client.module;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.setting.Setting;
+import net.dent.client.DentClient;
+import net.dent.client.setting.Setting;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 
@@ -23,7 +23,7 @@ public class Module {
     }
 
     protected void addSetting(Setting setting) {
-        FoxBase.instance.settingManager.addSetting(setting);
+        DentClient.instance.settingManager.addSetting(setting);
     }
 
     public boolean isToggle() {
@@ -81,10 +81,10 @@ public class Module {
     }
 
     public void onEnable() {
-        FoxBase.instance.eventManager.register(this);
+        DentClient.instance.eventManager.register(this);
     }
 
     public void onDisable() {
-        FoxBase.instance.eventManager.unregister(this);
+        DentClient.instance.eventManager.unregister(this);
     }
 }

@@ -1,9 +1,9 @@
-package cn.enaium.foxbase.mixin;
+package net.dent.client.mixin;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.event.Event;
-import cn.enaium.foxbase.event.events.EventMotion;
-import cn.enaium.foxbase.event.events.EventUpdate;
+import net.dent.client.DentClient;
+import net.dent.client.event.Event;
+import net.dent.client.event.events.EventMotion;
+import net.dent.client.event.events.EventUpdate;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,7 +19,7 @@ public class ClientPlayerEntityMixin {
             method = "sendChatMessage",
             cancellable = true)
     private void onSendChatMessage(String message, CallbackInfo info) {
-        if (FoxBase.instance.commandManager.processCommand(message)) {
+        if (DentClient.instance.commandManager.processCommand(message)) {
             info.cancel();
         }
     }

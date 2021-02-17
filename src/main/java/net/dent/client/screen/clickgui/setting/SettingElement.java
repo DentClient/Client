@@ -1,11 +1,11 @@
-package cn.enaium.foxbase.screen.clickgui.setting;
+package net.dent.client.screen.clickgui.setting;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.module.Module;
-import cn.enaium.foxbase.setting.Setting;
-import cn.enaium.foxbase.utils.ColorUtils;
-import cn.enaium.foxbase.utils.FontUtils;
-import cn.enaium.foxbase.utils.Render2D;
+import net.dent.client.DentClient;
+import net.dent.client.module.Module;
+import net.dent.client.setting.Setting;
+import net.dent.client.utils.ColorUtils;
+import net.dent.client.utils.FontUtils;
+import net.dent.client.utils.Render2D;
 import net.minecraft.client.util.math.MatrixStack;
 
 import java.awt.*;

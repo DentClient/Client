@@ -10,10 +10,10 @@ public enum DentClient {
 
     instance;
 
-    public String name = "FoxBase";
-    public String author = "Enaium";
-    public String version = "1.0";
-    public String game = "1.16.4";
+    public static String name = "Dent Client";
+    public static String author = "Whop42";
+    public static String version = "0.42";
+    public static String game = "1.16.4";
 
     public EventManager eventManager;
     public ModuleManager moduleManager;
@@ -36,7 +36,7 @@ public enum DentClient {
         configManager.saveConfig();
     }
 
-    public String getVersion() {
+    public static String getVersion() {
         return version;
     }
 

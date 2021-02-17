@@ -1,12 +1,12 @@
-package cn.enaium.foxbase.command.commands;
-
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.command.Command;
-import cn.enaium.foxbase.module.Module;
-import cn.enaium.foxbase.setting.Setting;
-import cn.enaium.foxbase.utils.ChatUtils;
+package net.dent.client.command.commands;
 
 import java.util.ArrayList;
+
+import net.dent.client.DentClient;
+import net.dent.client.command.Command;
+import net.dent.client.module.Module;
+import net.dent.client.setting.Setting;
+import net.dent.client.utils.ChatUtils;
 
 public class SetCommand implements Command {
 
@@ -18,16 +18,16 @@ public class SetCommand implements Command {
 
         if (args.length == 2 || args.length == 4) {
 
-            Module module = FoxBase.instance.moduleManager.getModule(args[1]);
-            ArrayList<Setting> settings = FoxBase.instance.settingManager.getSettingsForModule(FoxBase.instance.moduleManager.getModule(args[1]));
+            Module module = DentClient.instance.moduleManager.getModule(args[1]);
+            ArrayList<Setting> settings = DentClient.instance.settingManager.getSettingsForModule(DentClient.instance.moduleManager.getModule(args[1]));
 
             if(module == null) {
-                ChatUtils.message("The module with the name \"" + args[1] + "\" does not exist.");
+                ChatUtils.message(args[1] + ": does not exist.");
                 return true;
             }
 
             if(settings == null) {
-                ChatUtils.message("The module with the name \"" + args[1] + "\" no setting exists.");
+                ChatUtils.message(args[1] + ": no setting exists.");
                 return true;
             }
 

@@ -1,6 +1,6 @@
-package cn.enaium.foxbase.event.events;
+package net.dent.client.event.events;
 
-import cn.enaium.foxbase.event.Event;
+import net.dent.client.event.Event;
 import net.minecraft.client.util.math.MatrixStack;
 
 public class EventRender2D extends Event {

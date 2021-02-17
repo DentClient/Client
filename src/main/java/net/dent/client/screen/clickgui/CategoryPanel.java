@@ -1,11 +1,11 @@
-package cn.enaium.foxbase.screen.clickgui;
+package net.dent.client.screen.clickgui;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.module.Module;
-import cn.enaium.foxbase.module.Category;
-import cn.enaium.foxbase.utils.ColorUtils;
-import cn.enaium.foxbase.utils.FontUtils;
-import cn.enaium.foxbase.utils.Render2D;
+import net.dent.client.DentClient;
+import net.dent.client.module.Category;
+import net.dent.client.module.Module;
+import net.dent.client.utils.ColorUtils;
+import net.dent.client.utils.FontUtils;
+import net.dent.client.utils.Render2D;
 import net.minecraft.client.util.math.MatrixStack;
 
 import java.awt.*;
@@ -38,7 +38,7 @@ public class CategoryPanel {
         this.height = height;
         this.modulePanels = new ArrayList<>();
         ArrayList<Module> modules = new ArrayList<>();
-        modules.addAll(FoxBase.instance.moduleManager.getModulesForCategory(this.category));
+        modules.addAll(DentClient.instance.moduleManager.getModulesForCategory(this.category));
         for (Module m : modules) {
             this.modulePanels.add(new ModulePanel(m));
         }
@@ -85,7 +85,7 @@ public class CategoryPanel {
 
     private int getWidestModule() {
         int width = 0;
-        for (Module m : FoxBase.instance.moduleManager.getModules()) {
+        for (Module m : DentClient.instance.moduleManager.getModules()) {
             String name = m.getName();
             int cWidth = FontUtils.getStringWidth(
                     name.substring(0, 1).toUpperCase() + name.substring(1, name.length()).toLowerCase());

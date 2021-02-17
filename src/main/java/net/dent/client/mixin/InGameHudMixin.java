@@ -1,6 +1,6 @@
-package cn.enaium.foxbase.mixin;
+package net.dent.client.mixin;
 
-import cn.enaium.foxbase.event.events.EventRender2D;
+import net.dent.client.event.events.EventRender2D;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;

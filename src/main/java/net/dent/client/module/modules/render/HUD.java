@@ -27,7 +27,7 @@ public class HUD extends Module {
     private int screen;
 
     private Setting tabGUI = new Setting(this, "TabGUI", true);
-    private Setting activeMods = new Setting(this, "activeModss", true);
+    private Setting toggleList = new Setting(this, "Active Mods", true);
 
     public HUD() {
         super("HUD", GLFW.GLFW_KEY_P, Category.RENDER);
@@ -39,12 +39,12 @@ public class HUD extends Module {
         this.screen = 0;
         this.categoryValues.addAll(Arrays.asList(Category.values()));
         addSetting(tabGUI);
-        addSetting(activeMods);
+        addSetting(toggleList);
     }
 
     @EventTarget
-    public void activeMods(EventRender2D e) {
-        if (!this.activeMods.isToggle()) {
+    public void toggleList(EventRender2D e) {
+        if (!this.toggleList.isToggle()) {
             return;
         }
 

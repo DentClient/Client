@@ -1,12 +1,13 @@
-package cn.enaium.foxbase.config.config;
+package net.dent.client.config.config;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.module.Module;
-import cn.enaium.foxbase.config.Config;
-import cn.enaium.foxbase.setting.Setting;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+
+import net.dent.client.DentClient;
+import net.dent.client.config.Config;
+import net.dent.client.module.Module;
+import net.dent.client.setting.Setting;
 import net.minecraft.client.MinecraftClient;
 
 import java.io.File;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class ModulesConfig extends Config {
 
-    private final File directory = new File(MinecraftClient.getInstance().runDirectory.toString() + "/" + FoxBase.instance.name + "/" + "Modules");
+    private final File directory = new File(MinecraftClient.getInstance().runDirectory.toString() + "/" + DentClient.instance.name + "/" + "Modules");
 
     public ModulesConfig(Gson gson, File file) {
         super(gson, file);
@@ -29,7 +30,7 @@ public class ModulesConfig extends Config {
         makeDirecotry();
 
 
-        for (Module module : FoxBase.instance.moduleManager.getModules()) {
+        for (Module module : DentClient.instance.moduleManager.getModules()) {
 
             makeModuleFile(module);
 
@@ -55,7 +56,7 @@ public class ModulesConfig extends Config {
             }
 
 
-            ArrayList<Setting> settings = FoxBase.instance.settingManager.getSettingsForModule(module);
+            ArrayList<Setting> settings = DentClient.instance.settingManager.getSettingsForModule(module);
 
             if (settings != null && jsonObject.has("settings")) {
 
@@ -88,7 +89,7 @@ public class ModulesConfig extends Config {
     public void saveFile() throws IOException {
         makeDirecotry();
 
-        for (Module module : FoxBase.instance.moduleManager.getModules()) {
+        for (Module module : DentClient.instance.moduleManager.getModules()) {
 
             makeModuleFile(module);
 
@@ -101,7 +102,7 @@ public class ModulesConfig extends Config {
             jsonObject.addProperty("key", module.getKeyCode());
 
 
-            ArrayList<Setting> settings = FoxBase.instance.settingManager.getSettingsForModule(module);
+            ArrayList<Setting> settings = DentClient.instance.settingManager.getSettingsForModule(module);
 
             if (settings != null) {
 

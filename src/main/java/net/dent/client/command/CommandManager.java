@@ -1,10 +1,10 @@
-package cn.enaium.foxbase.command;
-
-import cn.enaium.foxbase.command.commands.*;
-import cn.enaium.foxbase.utils.ChatUtils;
+package net.dent.client.command;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import net.dent.client.command.commands.*;
+import net.dent.client.utils.ChatUtils;
 
 public class CommandManager {
 

@@ -1,4 +1,4 @@
-package cn.enaium.foxbase.command;
+package net.dent.client.command;
 
 public interface Command {
 

@@ -1,6 +1,6 @@
-package cn.enaium.foxbase.event.events;
+package net.dent.client.event.events;
 
-import cn.enaium.foxbase.event.Event;
+import net.dent.client.event.Event;
 public class EventRender3D extends Event {
 
 	public float particlTicks;

@@ -1,10 +1,10 @@
-package cn.enaium.foxbase.module.modules.combat;
+package net.dent.client.module.modules.combat;
 
-import cn.enaium.foxbase.event.EventTarget;
-import cn.enaium.foxbase.event.events.EventUpdate;
-import cn.enaium.foxbase.module.Category;
-import cn.enaium.foxbase.module.Module;
-import cn.enaium.foxbase.setting.Setting;
+import net.dent.client.event.EventTarget;
+import net.dent.client.event.events.EventUpdate;
+import net.dent.client.module.Category;
+import net.dent.client.module.Module;
+import net.dent.client.setting.Setting;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;

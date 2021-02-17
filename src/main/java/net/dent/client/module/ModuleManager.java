@@ -1,13 +1,13 @@
-package cn.enaium.foxbase.module;
+package net.dent.client.module;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.event.EventTarget;
-import cn.enaium.foxbase.event.events.EventKeyboard;
-import cn.enaium.foxbase.module.modules.combat.Aura;
-import cn.enaium.foxbase.module.modules.movement.Sprint;
-import cn.enaium.foxbase.module.modules.render.FullBright;
-import cn.enaium.foxbase.module.modules.render.GUI;
-import cn.enaium.foxbase.module.modules.render.HUD;
+import net.dent.client.DentClient;
+import net.dent.client.event.EventTarget;
+import net.dent.client.event.events.EventKeyboard;
+import net.dent.client.module.modules.combat.Aura;
+import net.dent.client.module.modules.movement.Sprint;
+import net.dent.client.module.modules.render.FullBright;
+import net.dent.client.module.modules.render.GUI;
+import net.dent.client.module.modules.render.HUD;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFW;
@@ -19,7 +19,7 @@ public class ModuleManager {
 
     public ModuleManager() {
         this.modules = new ArrayList();
-        FoxBase.instance.eventManager.register(this);
+        DentClient.instance.eventManager.register(this);
     }
 
     public void loadMods() {

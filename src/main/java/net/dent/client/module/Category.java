@@ -1,4 +1,4 @@
-package cn.enaium.foxbase.module;
+package net.dent.client.module;
 
 public enum Category {
     COMBAT,

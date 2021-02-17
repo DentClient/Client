@@ -1,6 +1,6 @@
-package cn.enaium.foxbase.mixin;
+package net.dent.client.mixin;
 
-import cn.enaium.foxbase.FoxBase;
+import net.dent.client.DentClient;
 import net.minecraft.client.Keyboard;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.InputUtil;
@@ -17,17 +17,17 @@ public class MinecraftClientMixin {
 
     @Inject(at = @At("RETURN"), method = "updateWindowTitle")
 	private void updateWindowTitle(CallbackInfo info) {
-		this.window.setTitle(FoxBase.instance.name + " | Author:" + FoxBase.instance.author + " | Version:" + FoxBase.instance.version + " | Minecraft:" + FoxBase.instance.game);
+		this.window.setTitle(DentClient.instance.name + " | Author:" + DentClient.instance.author + " | Version:" + DentClient.instance.version + " | Minecraft:" + DentClient.instance.game);
 	}
 
     @Inject(at = @At("HEAD"), method = "run")
     private void run(CallbackInfo info) {
-        FoxBase.instance.run();
+        DentClient.instance.run();
     }
 
     @Inject(at = @At("HEAD"), method = "stop")
     private void stop(CallbackInfo info) {
-        FoxBase.instance.stop();
+        DentClient.instance.stop();
     }
 
 
