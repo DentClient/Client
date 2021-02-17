@@ -1,12 +1,12 @@
-package cn.enaium.foxbase;
+package net.dent.client;
 
-import cn.enaium.foxbase.command.CommandManager;
-import cn.enaium.foxbase.config.ConfigManager;
-import cn.enaium.foxbase.event.EventManager;
-import cn.enaium.foxbase.module.ModuleManager;
-import cn.enaium.foxbase.setting.SettingManager;
+import net.dent.client.command.CommandManager;
+import net.dent.client.config.ConfigManager;
+import net.dent.client.event.EventManager;
+import net.dent.client.module.ModuleManager;
+import net.dent.client.setting.SettingManager;
 
-public enum FoxBase {
+public enum DentClient {
 
     instance;
 
@@ -34,6 +34,10 @@ public enum FoxBase {
 
     public void stop() {
         configManager.saveConfig();
+    }
+
+    public String getVersion() {
+        return version;
     }
 
 }
