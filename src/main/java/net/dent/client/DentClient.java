@@ -13,7 +13,7 @@ public enum DentClient {
     public static String name = "Dent Client";
     public static String author = "Whop42";
     public static String version = "0.42";
-    public static String game = "1.16.4";
+    public static String game = "1.16.5";
 
     public EventManager eventManager;
     public ModuleManager moduleManager;
