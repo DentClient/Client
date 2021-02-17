@@ -1,6 +1,5 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/DentClient/Client)
-
 # Dent Client
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/DentClient/Client)
 
 Pretty much only runs
 
@@ -14,3 +13,45 @@ its a fabric mod you idiot
 - that's a fabric mod
 
 
+## Planned Client Features:
+- [ ] JSON config system
+- [ ] ClickGUI
+    - [ ] Multiple Themes
+    - [ ] Customizable
+    - [ ] External Mode?
+- [ ] Music Player
+- [ ] Installer
+- [ ] Logo
+
+## Planned Hacks:
+### Combat:
+    - [ ] Kill Aura
+        - [ ] FOV Mode
+        - [ ] CPS
+    - [ ] Autoclicker (GHOST)
+        - [ ] CPS
+        - [ ] Jitter
+    - [ ] Trigger
+        - [ ] CPS
+        - [ ] Chance of Hit
+### Render:
+    - [ ] ESP
+        - [ ] Custom Colors
+        - [ ] 2D, 3D, Glow
+    - [ ] 
+### Utility:
+    - [ ] Spammer
+        - [ ] Custom Message
+### Exploit:
+    - [ ] AutoDupe
+        - [ ] 1.16 Paper Book Dupe
+        - [ ] Empty Bottle Dupe
+### Movement:
+    - [ ] Speed
+        - [ ] NCP
+        - [ ] BHop
+        - [ ] 
+
+
+## Credits:
+[Fabric MC](https://fabricmc.net "Fabric")
