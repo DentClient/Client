@@ -15,21 +15,24 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.stream.StreamSupport;
 
-public class Aura extends Module {
+public class Revenge extends Module {
 
-    Setting cps = new Setting(this, "CPS", 7, 1, 20);
+    /*
+        Attacks when someone attacks you
+        author: Whop42
+    */
 
-    Setting mode = new Setting(this, "MODE", "MOD1", new ArrayList<>(Arrays.asList(new String[]{"MOD1","MOD2","MOD3"})));
 
-
-    public Aura() {
-        super("Aura", GLFW.GLFW_KEY_R, Category.COMBAT);
-        addSetting(cps);
-        addSetting(mode);
+    public Revenge() {
+        super("Revenge", GLFW.GLFW_KEY_UNKNOWN, Category.COMBAT);
     }
 
     @EventTarget
     public void onUpdate(EventUpdate e) {
-
+        if(mc.player.getAttacker() != null) {
+            mc.player.attack(mc.player.getAttacker());
+            mc.player.attack(mc.player.getAttacker());
+        }
     }
+
 }

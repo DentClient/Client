@@ -3,7 +3,7 @@ package net.dent.client.module;
 import net.dent.client.DentClient;
 import net.dent.client.event.EventTarget;
 import net.dent.client.event.events.EventKeyboard;
-import net.dent.client.module.modules.combat.Aura;
+import net.dent.client.module.modules.combat.Revenge;
 import net.dent.client.module.modules.movement.Sprint;
 import net.dent.client.module.modules.render.FullBright;
 import net.dent.client.module.modules.render.GUI;
@@ -26,7 +26,7 @@ public class ModuleManager {
         this.addModule(new Sprint());
         this.addModule(new HUD());
         this.addModule(new FullBright());
-        this.addModule(new Aura());
+        this.addModule(new Revenge());
         this.addModule(new GUI());
     }
 
