@@ -9,7 +9,7 @@ import net.dent.client.module.Module;
 
 public class Sprint extends Module {
     public Sprint() {
-        super("Sprint", GLFW.GLFW_KEY_SEMICOLON, Category.MOVEMENT);
+        super("Sprint", GLFW.GLFW_KEY_SEMICOLON, Category.MOVEMENT, true);
     }
 
     @EventTarget

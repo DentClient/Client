@@ -30,7 +30,7 @@ public class HUD extends Module {
     private Setting toggleList = new Setting(this, "Active Mods", true);
 
     public HUD() {
-        super("HUD", GLFW.GLFW_KEY_P, Category.RENDER);
+        super("HUD", GLFW.GLFW_KEY_P, Category.RENDER, true);
         this.categoryValues = new ArrayList<Category>();
         this.currentCategoryIndex = 0;
         this.currentModIndex = 0;

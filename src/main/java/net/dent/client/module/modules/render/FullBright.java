@@ -10,7 +10,7 @@ import net.dent.client.module.Module;
 public class FullBright extends Module {
 
     public FullBright() {
-        super("FullBright", GLFW.GLFW_KEY_G, Category.RENDER);
+        super("FullBright", GLFW.GLFW_KEY_G, Category.RENDER, true);
     }
 
     @Override

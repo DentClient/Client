@@ -10,16 +10,19 @@ public class Module {
     private String name;
     private int keyCode;
     private Category category;
+    private String desc;
+    private boolean ghost;
 
     private String displayText;
 
     protected MinecraftClient mc = MinecraftClient.getInstance();
 
-    public Module(String name, int keyCode, Category category) {
+    public Module(String name, int keyCode, Category category, boolean ghost) {
         this.toggle = false;
         this.name = name;
         this.keyCode = keyCode;
         this.category = category;
+        this.ghost = ghost;
     }
 
     protected void addSetting(Setting setting) {
@@ -40,6 +43,14 @@ public class Module {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String descrip) {
+        desc = descrip;
     }
 
     public int getKeyCode() {

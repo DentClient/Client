@@ -8,7 +8,7 @@ import net.dent.client.screen.clickgui.ClickGUI;
 
 public class GUI extends Module {
     public GUI() {
-        super("GUI", GLFW.GLFW_KEY_RIGHT_SHIFT, Category.RENDER);
+        super("GUI", GLFW.GLFW_KEY_RIGHT_SHIFT, Category.RENDER, true);
     }
 
     @Override
