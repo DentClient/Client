@@ -17,7 +17,7 @@ public class MinecraftClientMixin {
 
     @Inject(at = @At("RETURN"), method = "updateWindowTitle")
 	private void updateWindowTitle(CallbackInfo info) {
-		this.window.setTitle(DentClient.instance.name + " | Author:" + DentClient.instance.author + " | Version:" + DentClient.instance.version + " | Minecraft:" + DentClient.instance.game);
+		this.window.setTitle(DentClient.instance.name + " v" + DentClient.instance.version);
 	}
 
     @Inject(at = @At("HEAD"), method = "run")
