@@ -55,4 +55,5 @@ its a fabric mod you idiot
 
 ## Credits:
 [Fabric MC](https://fabricmc.net "Fabric")
+
 [Enaium's FoxBase](https://github.com/enaium/FoxBase "FoxBase")
