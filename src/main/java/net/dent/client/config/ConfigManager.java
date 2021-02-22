@@ -1,9 +1,10 @@
-package cn.enaium.foxbase.config;
+package net.dent.client.config;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.config.config.ModulesConfig;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import net.dent.client.DentClient;
+import net.dent.client.config.config.ModulesConfig;
 import net.minecraft.client.MinecraftClient;
 
 import java.io.File;
@@ -19,7 +20,7 @@ public class ConfigManager {
     public ConfigManager() {
         files = new ArrayList<Config>();
         gson = new GsonBuilder().serializeNulls().setPrettyPrinting().create();
-        directory = new File(MinecraftClient.getInstance().runDirectory.toString() + "/" + FoxBase.instance.name);
+        directory = new File(MinecraftClient.getInstance().runDirectory.toString() + "/" + DentClient.instance.name);
         makeDirectory();
         registerFiles();
     }

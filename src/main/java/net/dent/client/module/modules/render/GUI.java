@@ -1,13 +1,14 @@
-package cn.enaium.foxbase.module.modules.render;
+package net.dent.client.module.modules.render;
 
-import cn.enaium.foxbase.screen.clickgui.ClickGUI;
-import cn.enaium.foxbase.module.Category;
-import cn.enaium.foxbase.module.Module;
 import org.lwjgl.glfw.GLFW;
+
+import net.dent.client.module.Category;
+import net.dent.client.module.Module;
+import net.dent.client.screen.clickgui.ClickGUI;
 
 public class GUI extends Module {
     public GUI() {
-        super("GUI", GLFW.GLFW_KEY_RIGHT_SHIFT, Category.RENDER);
+        super("GUI", GLFW.GLFW_KEY_RIGHT_SHIFT, Category.RENDER, true);
     }
 
     @Override

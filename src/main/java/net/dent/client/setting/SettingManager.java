@@ -1,8 +1,8 @@
-package cn.enaium.foxbase.setting;
-
-import cn.enaium.foxbase.module.Module;
+package net.dent.client.setting;
 
 import java.util.ArrayList;
+
+import net.dent.client.module.Module;
 
 public class SettingManager {
     private ArrayList<Setting> settings;

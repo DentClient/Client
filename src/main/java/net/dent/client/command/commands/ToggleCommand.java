@@ -1,9 +1,9 @@
-package cn.enaium.foxbase.command.commands;
+package net.dent.client.command.commands;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.command.Command;
-import cn.enaium.foxbase.utils.ChatUtils;
-import cn.enaium.foxbase.module.Module;
+import net.dent.client.DentClient;
+import net.dent.client.command.Command;
+import net.dent.client.module.Module;
+import net.dent.client.utils.ChatUtils;
 
 public class ToggleCommand implements Command {
 
@@ -12,7 +12,7 @@ public class ToggleCommand implements Command {
 
         if (args.length == 2) {
 
-            Module module = FoxBase.instance.moduleManager.getModule(args[1]);
+            Module module = DentClient.instance.moduleManager.getModule(args[1]);
 
             if (module == null) {
                 ChatUtils.message("The module with the name " + args[1] + " does not exist.");

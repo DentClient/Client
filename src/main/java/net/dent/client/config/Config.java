@@ -1,4 +1,4 @@
-package cn.enaium.foxbase.config;
+package net.dent.client.config;
 
 import com.google.gson.Gson;
 

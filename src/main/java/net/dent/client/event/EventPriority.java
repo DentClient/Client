@@ -1,4 +1,4 @@
-package cn.enaium.foxbase.event;
+package net.dent.client.event;
 
 public enum EventPriority {
 

@@ -1,29 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "foxbase",
-  "version": "1.0",
+  "id": "dentclient",
+  "version": "0.42",
 
-  "name": "Fox Base",
-  "description": "Fox Base!",
+  "name": "Dent Client",
+  "description": "Based",
   "authors": [
-    "Enaium!"
+    "Whop42",
+    "Base by: Enaium"
   ],
   "contact": {
-    "homepage": "https://github.com/Enaium/FoxBase",
-    "sources": "https://github.com/Enaium/FoxBase"
+    "homepage": "https://github.com/DentClient",
+    "sources": "https://github.com/DentClient/Client"
   },
 
   "license": "",
-  "icon": "assets/foxbase/icon.png",
+  "icon": "assets/dent/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "cn.enaium.foxbase.FoxBaseMod"
+      "net.dent.client.DentClientMod"
     ]
   },
   "mixins": [
-    "foxbase.mixins.json"
+    "dent.mixins.json"
   ],
 
   "depends": {

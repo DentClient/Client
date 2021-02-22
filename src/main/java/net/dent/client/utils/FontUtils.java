@@ -1,4 +1,4 @@
-package cn.enaium.foxbase.utils;
+package net.dent.client.utils;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;

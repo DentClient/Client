@@ -1,14 +1,14 @@
-package cn.enaium.foxbase.screen.clickgui;
+package net.dent.client.screen.clickgui;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.screen.clickgui.setting.BooleanSettingElement;
-import cn.enaium.foxbase.screen.clickgui.setting.SettingElement;
-import cn.enaium.foxbase.screen.clickgui.setting.ValueSettingElement;
-import cn.enaium.foxbase.module.Module;
-import cn.enaium.foxbase.setting.Setting;
-import cn.enaium.foxbase.utils.ColorUtils;
-import cn.enaium.foxbase.utils.FontUtils;
-import cn.enaium.foxbase.utils.Render2D;
+import net.dent.client.DentClient;
+import net.dent.client.module.Module;
+import net.dent.client.screen.clickgui.setting.BooleanSettingElement;
+import net.dent.client.screen.clickgui.setting.SettingElement;
+import net.dent.client.screen.clickgui.setting.ValueSettingElement;
+import net.dent.client.setting.Setting;
+import net.dent.client.utils.ColorUtils;
+import net.dent.client.utils.FontUtils;
+import net.dent.client.utils.Render2D;
 import net.minecraft.client.util.math.MatrixStack;
 
 import java.awt.*;
@@ -26,7 +26,7 @@ public class ModulePanel {
     public ModulePanel(Module module) {
         this.module = module;
         this.settingElements = new ArrayList<>();
-        ArrayList<Setting> settings = FoxBase.instance.settingManager.getSettingsForModule(this.module);
+        ArrayList<Setting> settings = DentClient.instance.settingManager.getSettingsForModule(this.module);
         if (settings != null) {
             for (Setting setting : settings) {
                 if (setting.isBoolean()) {
@@ -75,7 +75,7 @@ public class ModulePanel {
 
     private int getWidestSetting() {
         int width = 0;
-        for (Setting m : FoxBase.instance.settingManager.getSettings()) {
+        for (Setting m : DentClient.instance.settingManager.getSettings()) {
             String name = m.getName();
             if (m.isValueInt()) {
                 name = name + ":" + m.getCurrentValueInt();

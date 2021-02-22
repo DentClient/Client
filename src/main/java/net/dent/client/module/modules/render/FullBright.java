@@ -1,15 +1,16 @@
-package cn.enaium.foxbase.module.modules.render;
+package net.dent.client.module.modules.render;
 
-import cn.enaium.foxbase.event.EventTarget;
-import cn.enaium.foxbase.event.events.EventUpdate;
-import cn.enaium.foxbase.module.Category;
-import cn.enaium.foxbase.module.Module;
 import org.lwjgl.glfw.GLFW;
+
+import net.dent.client.event.EventTarget;
+import net.dent.client.event.events.EventUpdate;
+import net.dent.client.module.Category;
+import net.dent.client.module.Module;
 
 public class FullBright extends Module {
 
     public FullBright() {
-        super("FullBright", GLFW.GLFW_KEY_G, Category.RENDER);
+        super("FullBright", GLFW.GLFW_KEY_G, Category.RENDER, true);
     }
 
     @Override

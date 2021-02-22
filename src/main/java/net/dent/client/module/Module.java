@@ -1,7 +1,7 @@
-package cn.enaium.foxbase.module;
+package net.dent.client.module;
 
-import cn.enaium.foxbase.FoxBase;
-import cn.enaium.foxbase.setting.Setting;
+import net.dent.client.DentClient;
+import net.dent.client.setting.Setting;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 
@@ -10,20 +10,23 @@ public class Module {
     private String name;
     private int keyCode;
     private Category category;
+    private String desc;
+    private boolean ghost;
 
     private String displayText;
 
     protected MinecraftClient mc = MinecraftClient.getInstance();
 
-    public Module(String name, int keyCode, Category category) {
+    public Module(String name, int keyCode, Category category, boolean ghost) {
         this.toggle = false;
         this.name = name;
         this.keyCode = keyCode;
         this.category = category;
+        this.ghost = ghost;
     }
 
     protected void addSetting(Setting setting) {
-        FoxBase.instance.settingManager.addSetting(setting);
+        DentClient.instance.settingManager.addSetting(setting);
     }
 
     public boolean isToggle() {
@@ -40,6 +43,14 @@ public class Module {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String descrip) {
+        desc = descrip;
     }
 
     public int getKeyCode() {
@@ -81,10 +92,10 @@ public class Module {
     }
 
     public void onEnable() {
-        FoxBase.instance.eventManager.register(this);
+        DentClient.instance.eventManager.register(this);
     }
 
     public void onDisable() {
-        FoxBase.instance.eventManager.unregister(this);
+        DentClient.instance.eventManager.unregister(this);
     }
 }

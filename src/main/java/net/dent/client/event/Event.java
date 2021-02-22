@@ -1,6 +1,4 @@
-package cn.enaium.foxbase.event;
-
-import cn.enaium.foxbase.FoxBase;
+package net.dent.client.event;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -8,6 +6,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+
+import net.dent.client.DentClient;
 
 
 
@@ -28,7 +28,7 @@ public abstract class Event {
     public void call() {
         cancelled = false;
 
-        CopyOnWriteArrayList<Data> dataList = FoxBase.instance.eventManager.get(this.getClass());
+        CopyOnWriteArrayList<Data> dataList = DentClient.instance.eventManager.get(this.getClass());
 
         if (dataList == null) {
             return;

@@ -27,10 +27,10 @@ public class HUD extends Module {
     private int screen;
 
     private Setting tabGUI = new Setting(this, "TabGUI", true);
-    private Setting activeMods = new Setting(this, "activeModss", true);
+    private Setting toggleList = new Setting(this, "Active Mods", true);
 
     public HUD() {
-        super("HUD", GLFW.GLFW_KEY_P, Category.RENDER);
+        super("HUD", GLFW.GLFW_KEY_P, Category.RENDER, true);
         this.categoryValues = new ArrayList<Category>();
         this.currentCategoryIndex = 0;
         this.currentModIndex = 0;
@@ -39,12 +39,12 @@ public class HUD extends Module {
         this.screen = 0;
         this.categoryValues.addAll(Arrays.asList(Category.values()));
         addSetting(tabGUI);
-        addSetting(activeMods);
+        addSetting(toggleList);
     }
 
     @EventTarget
-    public void activeMods(EventRender2D e) {
-        if (!this.activeMods.isToggle()) {
+    public void toggleList(EventRender2D e) {
+        if (!this.toggleList.isToggle()) {
             return;
         }
 
@@ -82,8 +82,8 @@ public class HUD extends Module {
             return;
         }
 
-        FontUtils.drawStringWithShadow(e.getMatrixStack(), DentClient.instance.name + " B"
-                + DentClient.instance.version, 5, 5, new Color(67, 0, 99).getRGB());
+        FontUtils.drawStringWithShadow(e.getMatrixStack(), DentClient.instance.name + " v"
+                + DentClient.instance.version, 5, 5, new Color(0, 163, 0).getRGB());
         int startX = 5;
         int startY = (5 + 9) + 2;
         Render2D.drawRect(e.getMatrixStack(), startX, startY, startX + this.getWidestCategory() + 5,
