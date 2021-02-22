@@ -1,6 +1,6 @@
 name: Gradle Error Checker
 
-on: [ push, pull_request ]
+on: [ push, pull_request, commit ]
 jobs:
   build:
     runs-on: ubuntu-latest
