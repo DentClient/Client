@@ -24,7 +24,7 @@ public class Revenge extends Module {
 
 
     public Revenge() {
-        super("Revenge", GLFW.GLFW_KEY_UNKNOWN, Category.COMBAT);
+        super("Revenge", GLFW.GLFW_KEY_UNKNOWN, Category.COMBAT, false);
     }
 
     @EventTarget
