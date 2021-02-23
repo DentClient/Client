@@ -28,11 +28,11 @@ its a fabric mod you idiot
    - [x] Kill Aura
        - [ ] FOV Mode
        - [ ] CPS
-    - [ ] Autoclicker (GHOST)
-        - [ ] CPS
-        - [ ] Jitter
-    - [x] Trigger
-        - [ ] Chance of Hit
+   - [ ] Autoclicker (GHOST)
+       - [ ] CPS
+       - [ ] Jitter
+   - [x] Trigger
+       - [ ] Chance of Hit
 ### Render:
    - [ ] ESP
        - [ ] Custom Colors
