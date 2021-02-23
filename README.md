@@ -25,32 +25,32 @@ its a fabric mod you idiot
 
 ## Planned Hacks:
 ### Combat:
-    - [x] Kill Aura
-        - [ ] FOV Mode
-        - [ ] CPS
+   - [x] Kill Aura
+       - [ ] FOV Mode
+       - [ ] CPS
     - [ ] Autoclicker (GHOST)
         - [ ] CPS
         - [ ] Jitter
-    - [ ] Trigger
-        - [ ] CPS
+    - [x] Trigger
         - [ ] Chance of Hit
 ### Render:
-    - [ ] ESP
-        - [ ] Custom Colors
-        - [ ] 2D, 3D, Glow
-    - [ ] 
+   - [ ] ESP
+       - [ ] Custom Colors
+       - [ ] 2D, 3D, Glow
+   - [ ] Tracers
+       - [ ] Custom Color
 ### Utility:
-    - [ ] Spammer
-        - [ ] Custom Message
+   - [ ] Spammer
+       - [ ] Custom Message
 ### Exploit:
-    - [ ] AutoDupe
-        - [ ] 1.16 Paper Book Dupe
-        - [ ] Empty Bottle Dupe
+   - [ ] AutoDupe
+       - [ ] 1.16 Paper Book Dupe
+       - [ ] Empty Bottle Dupe
 ### Movement:
-    - [ ] Speed
-        - [ ] NCP
-        - [ ] BHop
-        - [ ] 
+   - [ ] Speed
+       - [ ] NCP
+       - [ ] BHop
+       - [ ] Vanilla
 
 
 ## Credits:
