@@ -15,10 +15,10 @@ public class MinecraftClientMixin {
 
     private Window window;
 
-    @Inject(at = @At("RETURN"), method = "updateWindowTitle")
+   /* @Inject(at = @At("RETURN"), method = "updateWindowTitle")
 	private void updateWindowTitle(CallbackInfo info) {
 		this.window.setTitle(DentClient.instance.name + " v" + DentClient.instance.version);
-	}
+	}*/
 
     @Inject(at = @At("HEAD"), method = "run")
     private void run(CallbackInfo info) {

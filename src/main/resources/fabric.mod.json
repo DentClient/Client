@@ -15,7 +15,7 @@
   },
 
   "license": "",
-  "icon": "assets/dent/icon.png",
+  "icon": "assets/dentclient/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -24,7 +24,7 @@
     ]
   },
   "mixins": [
-    "dent.mixins.json"
+    "dentclient.mixins.json"
   ],
 
   "depends": {
