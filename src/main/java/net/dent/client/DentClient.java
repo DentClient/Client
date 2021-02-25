@@ -6,6 +6,8 @@ import net.dent.client.event.EventManager;
 import net.dent.client.module.ModuleManager;
 import net.dent.client.setting.SettingManager;
 
+
+
 public enum DentClient {
 
     instance;
@@ -14,6 +16,8 @@ public enum DentClient {
     public static String author = "Whop42";
     public static String version = "0.42";
     public static String game = "1.16.5";
+
+    
 
     public EventManager eventManager;
     public ModuleManager moduleManager;

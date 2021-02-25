@@ -17,7 +17,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//FoxClickGUI by enaium (go follow him)
 public class HUD extends Module {
 
     private ArrayList<Category> categoryValues;

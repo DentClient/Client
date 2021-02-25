@@ -13,7 +13,7 @@ import net.minecraft.client.util.math.MatrixStack;
 
 import java.awt.*;
 import java.util.ArrayList;
-
+//FoxClickGUI by enaium (go follow him)
 public class ModulePanel {
 
     private Module module;
