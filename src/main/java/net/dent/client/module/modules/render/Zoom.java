@@ -14,6 +14,7 @@ public class Zoom extends Module {
 
     @Override
     public void onEnable() {
+        super.onEnable();
         normal = mc.options.fov;
         mc.options.fov = 30;
         toggle();
@@ -21,6 +22,7 @@ public class Zoom extends Module {
 
     @Override
     public void onDisable() {
+        super.onDisable();
         mc.options.fov = normal;
     }
 }
