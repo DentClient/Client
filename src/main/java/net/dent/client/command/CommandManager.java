@@ -21,6 +21,7 @@ public class CommandManager {
         commands.put(new String[]{"help", "h"}, new HelpCommand());
         commands.put(new String[]{"toggle", "t"}, new ToggleCommand());
         commands.put(new String[]{"set","s"},new SetCommand());
+        commands.put(new String[]{"bind"}, new BindCommand());
     }
 
     public boolean processCommand(String rawMessage) {
