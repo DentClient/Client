@@ -30,7 +30,6 @@ public class Trigger extends Module {
             return;
 
         if(mc.crosshairTarget == null || !(mc.crosshairTarget instanceof EntityHitResult)) return;
-
         Entity target = ((EntityHitResult) mc.crosshairTarget).getEntity();
         mc.interactionManager.attackEntity(player, target);
         player.swingHand(Hand.MAIN_HAND);

@@ -9,7 +9,8 @@ import net.dent.client.module.Category;
 import net.dent.client.module.Module;
 
 public class Sprint extends Module {
-    public Setting noParticle = new Setting(this, "No Particles", false);
+
+    private Setting noParticle = new Setting(this, "No Particles", false);
 
     public Sprint() {
         super("Sprint", GLFW.GLFW_KEY_SEMICOLON, Category.MOVEMENT, true);
@@ -17,7 +18,7 @@ public class Sprint extends Module {
 
     @EventTarget
     public void onUpdate(EventUpdate e) {
-        if(mc.player.isSneaking() != true) {
+        if(!mc.player.isSneaking()) {
             if(noParticle.isToggle()) {
                 try {
                     if (mc.player.getMovementSpeed() != 0) {
@@ -30,7 +31,7 @@ public class Sprint extends Module {
             } else {
                 mc.player.setSprinting(true);
             }
-
+            
         }
     }
 }
