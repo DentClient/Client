@@ -14,6 +14,7 @@ public class Sprint extends Module {
 
     public Sprint() {
         super("Sprint", GLFW.GLFW_KEY_SEMICOLON, Category.MOVEMENT, true);
+        addSetting(noParticle);
     }
 
     @EventTarget
@@ -31,7 +32,7 @@ public class Sprint extends Module {
             } else {
                 mc.player.setSprinting(true);
             }
-            
+
         }
     }
 }
