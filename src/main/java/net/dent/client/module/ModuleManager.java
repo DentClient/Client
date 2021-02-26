@@ -8,6 +8,7 @@ import net.dent.client.module.modules.movement.Sprint;
 import net.dent.client.module.modules.render.FullBright;
 import net.dent.client.module.modules.render.GUI;
 import net.dent.client.module.modules.render.HUD;
+import net.dent.client.module.modules.render.Zoom;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFW;
@@ -28,6 +29,7 @@ public class ModuleManager {
         this.addModule(new FullBright());
         this.addModule(new Revenge());
         this.addModule(new GUI());
+        this.addModule(new Zoom());
     }
 
 
