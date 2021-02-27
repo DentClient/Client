@@ -3,25 +3,11 @@
 So, you've decided to contribute to Dent Client. Here's how.
 
 ## Code Style
-Use the typical Java style like this:
-```Java
-public static void Main(String[] args) {
-    private int x = 1;
-    private int y = 2;
-    add(x, y);
-}
-//Single line comment
-/*
-    Multi-Line comment
-*/
-public int add(num1, num2) {
-    return x + y;
-}
-```
+Use the typical Java style, please. If you're not sure, use your IDE's `format document` function.
 
 ## Imports
 Don't do this: `import net.minecraft.*;` 
-Do this: `import net.minecraft.client.Mouse`
+Do this: `import net.minecraft.client.player;`
 Because we're trying to keep this kinda lightweight.
 
 ## Adding Modules
@@ -34,6 +20,7 @@ public class Hack extends Module {
     public Hack() {
         //name, key, category, isGhost
         super("Hack", GLFW.GLFW_KEY_H, Category.PLAYER, true);
+        addSetting(setting);
     }
 
     @EventTarget
@@ -44,17 +31,19 @@ public class Hack extends Module {
     @Override
     public void onEnable() {
         //Once, when enabled
+        super.onEnable(); //THIS IS ESSENTIAL
     }
 
     @Override
     public void onDisable() {
         //Once, when disabled
+        super.onDisable(); //THIS IS ESSENTIAL
     }
 }
 ```
-Make sure to call in `net.dent.client.module.ModuleManager`'s `loadMods()` method.
+Make sure to call each new `Module` in `net.dent.client.module.ModuleManager`'s `loadMods()` method.
 
-If you make multiple `Modules` at once, put them in seperate commits.
+If you make multiple `Module`s at once, put them in seperate commits.
 
 ## Misc.
-SPELLCHECK YOUR STRINGS AND COMMENTS.
+Please use correct grammar.

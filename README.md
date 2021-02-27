@@ -3,8 +3,10 @@
 
 Pretty much only runs
 
-## Building:
-its a fabric mod you idiot
+## For Developers:
+Building: `./gradlew build`
+
+Contributing: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Install for filthy casuals:
 - go to actions and download artifacts.zip from the latest commit

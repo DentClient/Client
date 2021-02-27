@@ -55,7 +55,7 @@ public class CategoryPanel {
         if (this.displayModulePanel) {
             double moduleY = this.y + this.height;
             for (ModulePanel modulePanel : this.modulePanels) {
-                modulePanel.render(matrices, mouseX, mouseY, delta, this.x + this.width / 2 - (getWidestModule() + 10) / 2.0, moduleY, getWidestModule() + 10, FontUtils.getFontHeight() + 10);
+                modulePanel.render(matrices, mouseX, mouseY, delta, this.x + this.width / 2 - (getWidestModule() + 10) / 2.0, moduleY, ClickGUI.getWidestCategory() + 10, FontUtils.getFontHeight() + 10);
                 moduleY += FontUtils.getFontHeight() + 10;
             }
         }

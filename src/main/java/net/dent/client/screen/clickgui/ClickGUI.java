@@ -53,7 +53,7 @@ public class ClickGUI extends Screen {
         return false;
     }
 
-    private int getWidestCategory() {
+    static int getWidestCategory() {
         int width = 0;
         for (Category c : Category.values()) {
             String name = c.name();
