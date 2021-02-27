@@ -19,20 +19,10 @@ public class Sprint extends Module {
 
     @EventTarget
     public void onUpdate(EventUpdate e) {
-        if(!mc.player.isSneaking()) {
-            if(noParticle.isToggle()) {
-                try {
-                    if (mc.player.getMovementSpeed() != 0) {
-                        mc.player.setSprinting(true);
-                    }
-                } catch(Exception ex) {
-                    System.err.println(ex.getStackTrace());
-                    noParticle.setToggle(false);
-                }
-            } else {
-                mc.player.setSprinting(true);
-            }
-
+        if (mc.player.forwardSpeed > 0 && noParticle.isToggle()) {
+            mc.player.setSprinting(true);
+        } else if (!noParticle.isToggle()) {
+            mc.player.setSprinting(true);
         }
     }
 }

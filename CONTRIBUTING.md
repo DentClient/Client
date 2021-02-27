@@ -13,6 +13,10 @@ Because we're trying to keep this kinda lightweight.
 ## Adding Modules
 Template for module:
 ```Java
+package net.dent.client.module.example;//change this
+
+import net.dent.client.module.Module;
+
 public class Hack extends Module {
 
     public Setting setting = new Setting(this, "Setting", false);
