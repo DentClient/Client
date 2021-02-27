@@ -20,9 +20,11 @@ public class ClickGUI extends Screen {
         categoryPanels = new ArrayList<>();
         double categoryX = 5;
         for (Category category : Category.values()) {
+            // category, x, y, width
             categoryPanels.add(new CategoryPanel(category, categoryX, 5, getWidestCategory() + 50,
                     FontUtils.getFontHeight() + 10));
-            categoryX += FontUtils.getFontHeight() + 10 + 5;
+
+            categoryX += FontUtils.getFontHeight() + getWidestCategory() + 50;
         }
     }
 

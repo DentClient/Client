@@ -29,10 +29,7 @@ public class Revenge extends Module {
 
     @EventTarget
     public void onUpdate(EventUpdate e) {
-        if(mc.player.getAttacker() != null) {
-            mc.player.attack(mc.player.getAttacker());
-            mc.player.attack(mc.player.getAttacker());
-        }
+        
     }
 
 }
