@@ -35,6 +35,10 @@ public class Zoom extends Module {
     @EventTarget
     public void onKey(EventKeyboard e) {
         if(this.isToggle()) {
+            if(e.getAction() == GLFW.GLFW_RELEASE) {
+                mc.options.fov = normal;
+            }
+
             if (e.getAction() != GLFW.GLFW_PRESS) {
                 return;
             }
