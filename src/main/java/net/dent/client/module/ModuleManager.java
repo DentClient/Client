@@ -8,6 +8,7 @@ import net.dent.client.module.modules.combat.Trigger;
 import net.dent.client.module.modules.movement.AirJump;
 import net.dent.client.module.modules.movement.Flight;
 import net.dent.client.module.modules.movement.Sprint;
+import net.dent.client.module.modules.player.NoFall;
 import net.dent.client.module.modules.render.FullBright;
 import net.dent.client.module.modules.render.GUI;
 import net.dent.client.module.modules.render.HUD;
@@ -36,6 +37,7 @@ public class ModuleManager {
         this.addModule(new Trigger());
         this.addModule(new AirJump());
         this.addModule(new Flight());
+        this.addModule(new NoFall());
     }
 
 
