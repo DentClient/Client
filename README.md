@@ -25,34 +25,7 @@ Contributing: [CONTRIBUTING.md](CONTRIBUTING.md)
 - [ ] Logo
 
 ## Planned Hacks:
-### Combat:
-   - [x] Kill Aura
-       - [ ] FOV Mode
-       - [ ] CPS
-   - [ ] Autoclicker (GHOST)
-       - [ ] CPS
-       - [ ] Jitter
-   - [x] Trigger
-       - [ ] Chance of Hit
-### Render:
-   - [ ] ESP
-       - [ ] Custom Colors
-       - [ ] 2D, 3D, Glow
-   - [ ] Tracers
-       - [ ] Custom Color
-### Utility:
-   - [ ] Spammer
-       - [ ] Custom Message
-### Exploit:
-   - [ ] AutoDupe
-       - [ ] 1.16 Paper Book Dupe
-       - [ ] Empty Bottle Dupe
-### Movement:
-   - [ ] Speed
-       - [ ] NCP
-       - [ ] BHop
-       - [ ] Vanilla
-
+They're in projects
 
 ## Credits:
 [Fabric MC](https://fabricmc.net "Fabric")
