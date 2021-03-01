@@ -10,6 +10,7 @@ import net.minecraft.client.util.math.MatrixStack;
 
 import java.awt.*;
 import java.util.ArrayList;
+
 //FoxClickGUI by enaium (go follow him)
 public class CategoryPanel {
 
@@ -84,7 +85,7 @@ public class CategoryPanel {
     }
 
     private int getWidestModule() {
-        int width = 0;
+        int width = ClickGUI.getWidestCategory();
         for (Module m : DentClient.instance.moduleManager.getModules()) {
             String name = m.getName();
             int cWidth = FontUtils.getStringWidth(
@@ -93,6 +94,7 @@ public class CategoryPanel {
                 width = cWidth;
             }
         }
+
         return width;
     }
 

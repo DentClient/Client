@@ -30,6 +30,8 @@ public class Zoom extends Module {
         if(mc.options.fov != fov.getCurrentValueInt()) {
             normal = mc.options.fov;
         }
+
+
     }
 
     @EventTarget

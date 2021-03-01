@@ -47,8 +47,9 @@ public class ModulePanel {
         if (this.hovered) {
             color = ColorUtils.SELECT;
         }
-
+        //Draws bkg rect
         Render2D.drawRectWH(matrices, x, y, width, height, color);
+        //Draws name on rect
         FontUtils.drawHVCenteredString(matrices, this.module.getName(), x + width / 2, y + height / 2, Color.WHITE.getRGB());
         if (this.displaySettingElement) {
             double SettingElementY = y;
