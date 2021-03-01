@@ -5,10 +5,8 @@ import net.dent.client.event.EventTarget;
 import net.dent.client.event.events.EventKeyboard;
 import net.dent.client.module.modules.combat.Revenge;
 import net.dent.client.module.modules.combat.Trigger;
-import net.dent.client.module.modules.movement.AirJump;
-import net.dent.client.module.modules.movement.Flight;
-import net.dent.client.module.modules.movement.Sprint;
-import net.dent.client.module.modules.player.NoFall;
+import net.dent.client.module.modules.movement.*;
+import net.dent.client.module.modules.player.PotionSpoof;
 import net.dent.client.module.modules.render.FullBright;
 import net.dent.client.module.modules.render.GUI;
 import net.dent.client.module.modules.render.HUD;
@@ -35,9 +33,10 @@ public class ModuleManager {
         this.addModule(new GUI());
         this.addModule(new Zoom());
         this.addModule(new Trigger());
-        this.addModule(new AirJump());
         this.addModule(new Flight());
-        this.addModule(new NoFall());
+        this.addModule(new Step());
+        this.addModule(new AirJump());
+        this.addModule(new PotionSpoof());
     }
 
 
