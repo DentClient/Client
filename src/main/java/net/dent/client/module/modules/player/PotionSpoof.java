@@ -17,13 +17,17 @@ import org.lwjgl.glfw.GLFW;
 
 public class PotionSpoof extends Module {
 
+    //We're going to need a mode for multiple potions at some point -Whop
+
     private Setting Potion = new Setting(this, "Potion Selector", 3, 1, 32);
+    private Setting amplifier = new Setting(this, "Amplifier", 1, 1, 255);
+    private Setting duration = new Setting(this, "Duration (Seconds)", 60, 1, 9999);
 
     private int potion;
 
     public PotionSpoof() {
         //name, key, category, isGhost
-        super("Potion Spoof", GLFW.GLFW_KEY_P, Category.MOVEMENT, true);
+        super("Potion Spoof", -1, Category.MOVEMENT, false);
         addSetting(Potion);
     }
 
@@ -32,7 +36,7 @@ public class PotionSpoof extends Module {
         //Every Tick
         potion = Potion.getCurrentValueInt();
         if (isToggle()) {
-            mc.player.addStatusEffect(new StatusEffectInstance(StatusEffect.byRawId(potion), 10000000, 5));
+            mc.player.addStatusEffect(new StatusEffectInstance(StatusEffect.byRawId(potion), duration.getCurrentValueInt(), amplifier.getCurrentValueInt()));
         }
 
         if (!mc.player.hasStatusEffect(StatusEffect.byRawId(potion))) {
