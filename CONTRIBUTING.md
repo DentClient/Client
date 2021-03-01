@@ -5,6 +5,8 @@ So, you've decided to contribute to Dent Client. Here's how.
 ## Code Style
 Use the typical Java style, please. If you're not sure, use your IDE's `format document` function.
 
+Also please use camelCase for non-class naming purposes.
+
 ## Imports
 Don't do this: `import net.minecraft.*;` 
 Do this: `import net.minecraft.client.player;`
