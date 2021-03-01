@@ -6,6 +6,7 @@ import net.dent.client.event.events.EventKeyboard;
 import net.dent.client.module.modules.combat.Revenge;
 import net.dent.client.module.modules.combat.Trigger;
 import net.dent.client.module.modules.movement.*;
+import net.dent.client.module.modules.player.NoFall;
 import net.dent.client.module.modules.player.PotionSpoof;
 import net.dent.client.module.modules.render.FullBright;
 import net.dent.client.module.modules.render.GUI;
@@ -37,6 +38,7 @@ public class ModuleManager {
         this.addModule(new Step());
         this.addModule(new AirJump());
         this.addModule(new PotionSpoof());
+        this.addModule(new NoFall());
     }
 
 
