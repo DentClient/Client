@@ -15,9 +15,11 @@ import org.lwjgl.glfw.GLFW;
 
 public class Flight extends Module {
 
-    private float speed = (float) 0.1;
 
-    private Setting Speed = new Setting(this, "Flight Speed", 1, 1, 5);
+
+    private Setting Speed = new Setting(this, "Flight Speed", 0.1, 0.1, 5);
+
+    private double speed = 0.1;
 
     public Flight() {
         //name, key, category, isGhost
@@ -29,8 +31,13 @@ public class Flight extends Module {
     public void onUpdate(EventUpdate e) {
         //Every Tick
         if (isToggle()) {
-            mc.player.abilities.setFlySpeed((float)0.1);
             mc.player.abilities.flying = true;
+            speed = Speed.getCurrentValueDouble();
+            mc.player.abilities.setFlySpeed((float)speed);
+        }
+        else{
+            mc.player.abilities.setFlySpeed((float) 0.1);
+
         }
     }
 
