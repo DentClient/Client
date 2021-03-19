@@ -17,9 +17,9 @@ import java.util.stream.StreamSupport;
 
 public class Revenge extends Module {
 
-    /*
+    /**
         Attacks when someone attacks you
-        author: Whop42
+        @author Whop42
     */
 
 

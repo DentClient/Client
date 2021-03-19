@@ -6,12 +6,10 @@ import net.dent.client.event.events.EventKeyboard;
 import net.dent.client.module.modules.combat.Revenge;
 import net.dent.client.module.modules.combat.Trigger;
 import net.dent.client.module.modules.movement.*;
+import net.dent.client.module.modules.other.GhostMode;
 import net.dent.client.module.modules.player.NoFall;
 import net.dent.client.module.modules.player.PotionSpoof;
-import net.dent.client.module.modules.render.FullBright;
-import net.dent.client.module.modules.render.GUI;
-import net.dent.client.module.modules.render.HUD;
-import net.dent.client.module.modules.render.Zoom;
+import net.dent.client.module.modules.render.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFW;
@@ -30,7 +28,7 @@ public class ModuleManager {
         this.addModule(new Sprint());
         this.addModule(new HUD());
         this.addModule(new FullBright());
-        this.addModule(new Revenge());
+        //this.addModule(new Revenge()); //Doesn't function
         this.addModule(new GUI());
         this.addModule(new Zoom());
         this.addModule(new Trigger());
@@ -39,6 +37,8 @@ public class ModuleManager {
         this.addModule(new AirJump());
         this.addModule(new PotionSpoof());
         this.addModule(new NoFall());
+        this.addModule(new ExternalGUI());
+        this.addModule(new GhostMode());
     }
 
 

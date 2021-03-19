@@ -5,14 +5,17 @@ import net.fabricmc.api.ModInitializer;
 public class DentClientMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
+
+	    if(DentClient.instance.isGhost()) {
+	        return;
+        }
+
         System.out.println("########################################");
-        System.out.println("    INITIALIZING DENT CLIENT V 0.42     ");
+        System.out.println("    INITIALIZING DENT CLIENT V " + DentClient.getVersion());
         System.out.println("########################################");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("Dent Client Credits:   ");
-        System.out.println("    - Head Dev: Whop42");
-        System.out.println("    - Sucky Co-Dev: invertedcube");
+        System.out.println("                                        ");
+        System.out.println(" Dent Client Credits:   ");
+        System.out.println("     - Head Dev: Whop42");
+        System.out.println("     - Mediocre Co-Dev: InvertedCube");
 	}
 }

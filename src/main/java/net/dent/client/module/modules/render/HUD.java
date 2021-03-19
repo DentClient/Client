@@ -83,7 +83,7 @@ public class HUD extends Module {
         }
 
         FontUtils.drawStringWithShadow(e.getMatrixStack(), DentClient.instance.name + " v"
-                + DentClient.instance.version, 5, 5, new Color(0, 163, 0).getRGB());
+                + DentClient.instance.version, 5, 5, ColorUtils.SELECT);
         int startX = 5;
         int startY = (5 + 9) + 2;
         Render2D.drawRect(e.getMatrixStack(), startX, startY, startX + this.getWidestCategory() + 5,

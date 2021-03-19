@@ -28,14 +28,15 @@ public abstract class Event {
     public void call() {
         cancelled = false;
 
+        //Get all events and put them in a CopyOnWriteArrayList
         CopyOnWriteArrayList<Data> dataList = DentClient.instance.eventManager.get(this.getClass());
 
+        //If there's no events, do nothing
         if (dataList == null) {
             return;
         }
 
         dataList.forEach(data -> {
-            
             try {
                 data.getTarget().invoke(data.getSource(), this);
             } catch (IllegalAccessException | InvocationTargetException e) {

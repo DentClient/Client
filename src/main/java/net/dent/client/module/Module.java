@@ -81,8 +81,10 @@ public class Module {
         this.displayText = displayText;
     }
 
-    public void toggle()
-    {
+    public void toggle() {
+        if(!this.isGhost() && DentClient.instance.isGhost()) {
+            return;
+        }
         this.toggle = !this.toggle;
         if(this.toggle) {
             onEnable();
@@ -97,5 +99,13 @@ public class Module {
 
     public void onDisable() {
         DentClient.instance.eventManager.unregister(this);
+    }
+
+    public void setGhost(boolean value) {
+        this.ghost = value;
+    }
+
+    public boolean isGhost() {
+        return ghost;
     }
 }

@@ -31,6 +31,18 @@ public class CategoryPanel {
 
     private ArrayList<ModulePanel> modulePanels;
 
+    /**
+     * Adds all the modules to a list, and renders them. If the module is ghost, it isn't rendered.
+     *
+     * @version 2.0
+     * @author Enaium
+     * @param category
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     */
+
     public CategoryPanel(Category category, double x, double y, double width, double height) {
         this.category = category;
         this.x = x;
@@ -41,7 +53,13 @@ public class CategoryPanel {
         ArrayList<Module> modules = new ArrayList<>();
         modules.addAll(DentClient.instance.moduleManager.getModulesForCategory(this.category));
         for (Module m : modules) {
-            this.modulePanels.add(new ModulePanel(m));
+            if(DentClient.instance.isGhost()) {
+                if(m.isGhost()) {
+                    this.modulePanels.add(new ModulePanel(m));
+                }
+            } else {
+                this.modulePanels.add(new ModulePanel(m));
+            }
         }
     }
 

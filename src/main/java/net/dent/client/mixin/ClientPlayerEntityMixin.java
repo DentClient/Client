@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPlayerEntity.class)
 public class ClientPlayerEntityMixin {
 
-
+    //Processes dent commands
     @Inject(at = @At("HEAD"),
             method = "sendChatMessage",
             cancellable = true)

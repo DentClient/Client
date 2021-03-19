@@ -35,10 +35,6 @@ public class PotionSpoof extends Module {
     public void onUpdate(EventUpdate e) {
         //Every Tick
         potion = Potion.getCurrentValueInt();
-        if (isToggle()) {
-            mc.player.addStatusEffect(new StatusEffectInstance(StatusEffect.byRawId(potion), duration.getCurrentValueInt(), amplifier.getCurrentValueInt()));
-        }
-
         if (!mc.player.hasStatusEffect(StatusEffect.byRawId(potion))) {
             potion = Potion.getCurrentValueInt();
             mc.player.removeStatusEffect(StatusEffect.byRawId(potion));
@@ -48,6 +44,7 @@ public class PotionSpoof extends Module {
     public void onEnable() {
         //Once, when enabled
         super.onEnable(); //THIS IS ESSENTIAL
+        mc.player.addStatusEffect(new StatusEffectInstance(StatusEffect.byRawId(potion), duration.getCurrentValueInt(), amplifier.getCurrentValueInt()));
     }
     @Override
     public void onDisable() {

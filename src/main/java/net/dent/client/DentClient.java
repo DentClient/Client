@@ -16,8 +16,7 @@ public enum DentClient {
     public static String author = "Whop42";
     public static String version = "0.42";
     public static String game = "1.16.5";
-
-    
+    private boolean ghostMode = false;
 
     public EventManager eventManager;
     public ModuleManager moduleManager;
@@ -42,6 +41,18 @@ public enum DentClient {
 
     public static String getVersion() {
         return version;
+    }
+
+    public static String getName() {
+        return name;
+    }
+
+    public boolean isGhost() {
+        return ghostMode;
+    }
+
+    public void setGhostMode(boolean value) {
+        ghostMode = value;
     }
 
 }
