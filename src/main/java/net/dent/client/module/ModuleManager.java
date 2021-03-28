@@ -37,7 +37,6 @@ public class ModuleManager {
         this.addModule(new AirJump());
         this.addModule(new PotionSpoof());
         this.addModule(new NoFall());
-        this.addModule(new ExternalGUI());
         this.addModule(new GhostMode());
     }
 
