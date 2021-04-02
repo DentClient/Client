@@ -2,6 +2,7 @@ package net.dent.client.setting;
 
 import java.util.ArrayList;
 
+import net.dent.client.DentClient;
 import net.dent.client.module.Module;
 
 public class SettingManager {
@@ -19,10 +20,10 @@ public class SettingManager {
         return this.settings;
     }
     
-    public ArrayList<Setting> getSettingsForModule(Module m) {
+    public static ArrayList<Setting> getSettingsForModule(Module m) {
         ArrayList<Setting> settings = new ArrayList<Setting>();
 
-        for (Setting s : this.settings) {
+        for (Setting s : DentClient.instance.settingManager.getSettings()) {
             if (s.getModule().equals(m)) {
                 settings.add(s);
             }

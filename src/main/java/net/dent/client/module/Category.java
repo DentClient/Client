@@ -6,4 +6,6 @@ public enum Category {
     MOVEMENT,
     PLAYER,
     OTHER
+
+
 }

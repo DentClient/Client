@@ -1,16 +1,17 @@
 package net.dent.client.module;
 
+import com.lukflug.panelstudio.settings.Toggleable;
 import net.dent.client.DentClient;
 import net.dent.client.setting.Setting;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 
-public class Module {
+public class Module implements Toggleable {
     private boolean toggle;
     private String name;
     private int keyCode;
     private Category category;
-    private String desc;
+    private String desc = "";
     private boolean ghost;
 
     private String displayText;
@@ -92,6 +93,13 @@ public class Module {
             onDisable();
         }
     }
+
+    @Override
+    public boolean isOn() {
+        return this.toggle;
+    }
+
+
 
     public void onEnable() {
         DentClient.instance.eventManager.register(this);

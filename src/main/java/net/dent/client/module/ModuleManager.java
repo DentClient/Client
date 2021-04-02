@@ -76,10 +76,10 @@ public class ModuleManager {
         return modules;
     }
 
-    public ArrayList<Module> getModulesForCategory(Category c) {
+    public static ArrayList<Module> getModulesForCategory(Category c) {
         ArrayList<Module> modules = new ArrayList<>();
 
-        for (Module m : this.modules) {
+        for (Module m : DentClient.instance.moduleManager.getModules()) {
             if (m.getCategory().equals(c)) {
                 modules.add(m);
             }

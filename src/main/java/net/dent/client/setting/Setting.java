@@ -233,6 +233,10 @@ public class Setting {
         return "";
     }
 
+    public Category getCategoryEnum() {
+        return this.category;
+    }
+
     private float valueFix(float value) {
         DecimalFormat decimalFormat = new DecimalFormat(".0");
         return Float.parseFloat(decimalFormat.format(value));
