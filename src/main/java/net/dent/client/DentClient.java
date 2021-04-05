@@ -1,5 +1,6 @@
 package net.dent.client;
 
+import com.lukflug.panelstudio.ClickGUI;
 import net.dent.client.command.CommandManager;
 import net.dent.client.config.ConfigManager;
 import net.dent.client.event.EventManager;
@@ -33,9 +34,11 @@ public enum DentClient {
         settingManager = new SettingManager();
         commandManager = new CommandManager();
         configManager = new ConfigManager();
+        gui = new Guey();
         moduleManager.loadMods();
         commandManager.loadCommands();
         configManager.loadConfig();
+
     }
 
     public void stop() {

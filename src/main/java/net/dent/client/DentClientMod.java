@@ -16,6 +16,6 @@ public class DentClientMod implements ModInitializer {
         System.out.println("                                        ");
         System.out.println(" Dent Client Credits:   ");
         System.out.println("     - Head Dev: Whop42");
-        System.out.println("     - Mediocre Co-Dev: InvertedCube");
+        System.out.println("     - Dev?: InvertedCube");
 	}
 }

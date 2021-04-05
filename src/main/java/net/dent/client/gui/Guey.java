@@ -26,17 +26,7 @@ public class Guey extends MinecraftGUI {
 
     public Guey() {
         // Intialize necessary fields
-        colorToggle = new Toggleable() {
-            @Override
-            public void toggle() {
-
-            }
-
-            @Override
-            public boolean isOn() {
-                return false;
-            }
-        }; // <-- Toggleable indicating whether to use the RGB or HSB model for color settings
+        colorToggle = GUISettings.colorToggle; // <-- Toggleable indicating whether to use the RGB or HSB model for color settings
         guiInterface = new GUIInterface(true) {
             @Override
             protected String getResourcePrefix() {
@@ -66,20 +56,21 @@ public class Guey extends MinecraftGUI {
         int x = 1;
         int y = 5;
 
-
-
         for (Category category: Category.values()) {
             DraggableContainer panel = new DraggableContainer(category.toString(),null, theme.getPanelRenderer(),new SimpleToggleable(false),new SettingsAnimation(GUISettings.animationSpeed),null, new Point(x, y), 50); // <-- Width and default position of the panels needs to be defined
             gui.addComponent(panel);
+
             for (Module module: ModuleManager.getModulesForCategory(category)) {
                 CollapsibleContainer container = new CollapsibleContainer(module.getName(),null,theme.getContainerRenderer(),new SimpleToggleable(false),new SettingsAnimation(GUISettings.animationSpeed), module); // <-- It is recommended that the module-class implements Toggleable
                 panel.addComponent(container);
-                for (Setting setting: SettingManager.getSettingsForModule(module)) {
-                    if (setting.getCategoryEnum() == Setting.Category.BOOLEAN) container.addComponent(new BooleanComponent(setting.getName(),null,theme.getComponentRenderer(), GuiUtils.boolSettingToToggleable(setting)));
-                    else if (setting.getCategoryEnum() == Setting.Category.VALUE_INT) container.addComponent(new NumberComponent(setting.getName(),null,theme.getComponentRenderer(), GuiUtils.intSettingToNumSetting(setting), setting.getMaxValueInt(),setting.getMaxValueInt()));
-                    else if (setting.getCategoryEnum() == Setting.Category.VALUE_DOUBLE) container.addComponent(new NumberComponent(setting.getName(),null,theme.getComponentRenderer(), GuiUtils.doubleSettingToNumSetting(setting),setting.getMinValueDouble(),setting.getMaxValueDouble()));
-                    else if (setting.getCategoryEnum() == Setting.Category.MODE) container.addComponent(new EnumComponent(setting.getName(),null, theme.getComponentRenderer(), GuiUtils.modeSettingToEnumSetting(setting)));
-                    //We don't have a color setting lol (oof) //else if (setting instanceof ColorSetting) container.addComponent(new ColorComponent(setting.getName(),null,theme.getContainerRenderer(),new SettingsAnimation(GUISettings.animationSpeed),theme.getComponentRenderer(),(ColorSetting)setting, setting.alpha, setting.rainbowEnabled, colorToggle));
+                if(SettingManager.getSettingsForModule(module) != null) {
+                    for (Setting setting: SettingManager.getSettingsForModule(module)) {
+                        if (setting.getCategoryEnum() == Setting.Category.BOOLEAN) container.addComponent(new BooleanComponent(setting.getName(),null,theme.getComponentRenderer(), GuiUtils.boolSettingToToggleable(setting)));
+                        else if (setting.getCategoryEnum() == Setting.Category.VALUE_INT) container.addComponent(new NumberComponent(setting.getName(),null,theme.getComponentRenderer(), GuiUtils.intSettingToNumSetting(setting), setting.getMaxValueInt(),setting.getMaxValueInt()));
+                        else if (setting.getCategoryEnum() == Setting.Category.VALUE_DOUBLE) container.addComponent(new NumberComponent(setting.getName(),null,theme.getComponentRenderer(), GuiUtils.doubleSettingToNumSetting(setting),setting.getMinValueDouble(),setting.getMaxValueDouble()));
+                        else if (setting.getCategoryEnum() == Setting.Category.MODE) container.addComponent(new EnumComponent(setting.getName(),null, theme.getComponentRenderer(), GuiUtils.modeSettingToEnumSetting(setting)));
+                        //We don't have a color setting lol (oof) //else if (setting instanceof ColorSetting) container.addComponent(new ColorComponent(setting.getName(),null,theme.getContainerRenderer(),new SettingsAnimation(GUISettings.animationSpeed),theme.getComponentRenderer(),(ColorSetting)setting, setting.alpha, setting.rainbowEnabled, colorToggle));
+                    }
                 }
                 container.addComponent(new KeybindComponent(theme.getComponentRenderer(), GuiUtils.codeToKeybindSetting(module)));
             }
@@ -100,4 +91,6 @@ public class Guey extends MinecraftGUI {
     protected int getScrollSpeed() {
         return 10;
     }
+
+
 }

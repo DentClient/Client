@@ -3,10 +3,27 @@ package net.dent.client.gui;
 import com.ibm.icu.impl.coll.CollationRoot;
 import com.lukflug.panelstudio.settings.ColorSetting;
 import com.lukflug.panelstudio.settings.NumberSetting;
+import com.lukflug.panelstudio.settings.Toggleable;
 
 import java.awt.*;
 
 public class GUISettings {
+
+    static Toggleable colorToggle = new Toggleable() {
+
+        boolean value = true;
+
+        @Override
+        public void toggle() {
+            value = !value;
+        }
+
+        @Override
+        public boolean isOn() {
+            return value;
+        }
+    };
+
     static ColorSetting activeColor = new ColorSetting() {
 
         Color color = new Color(213, 108, 0);
@@ -38,6 +55,8 @@ public class GUISettings {
             isRainbow = rainbow;
         }
     };
+
+
 
     static ColorSetting inactiveColor = new ColorSetting() {
 

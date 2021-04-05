@@ -3,6 +3,7 @@ package net.dent.client.module;
 import com.lukflug.panelstudio.settings.Toggleable;
 import net.dent.client.DentClient;
 import net.dent.client.setting.Setting;
+import net.dent.client.utils.ChatUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 
@@ -82,6 +83,7 @@ public class Module implements Toggleable {
         this.displayText = displayText;
     }
 
+    @Override
     public void toggle() {
         if(!this.isGhost() && DentClient.instance.isGhost()) {
             return;
@@ -89,8 +91,10 @@ public class Module implements Toggleable {
         this.toggle = !this.toggle;
         if(this.toggle) {
             onEnable();
+            ChatUtils.message(this.getName() + " has been enabled.");
         } else {
             onDisable();
+            ChatUtils.message(this.getName() + " has been disabled.");
         }
     }
 

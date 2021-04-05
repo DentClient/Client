@@ -17,7 +17,7 @@ public class Step extends Module {
 
 
 
-    private Setting StepHeight = new Setting(this, "Step Height", 1, 1, 50);
+    private Setting stepHeight = new Setting(this, "Step Height", 1.5, 0.5, 20);
 
 
 
@@ -26,30 +26,20 @@ public class Step extends Module {
     public Step() {
         //name, key, category, isGhost
         super("Step", GLFW.GLFW_KEY_O, Category.MOVEMENT, true);
-        addSetting(StepHeight);
+        addSetting(stepHeight);
     }
 
     @EventTarget
     public void onUpdate(EventUpdate e) {
         //Every Tick
-        if (isToggle()) {
-            mc.player.stepHeight = (float) StepHeight.getCurrentValueInt();
-
-
-        }
-        else{
-            mc.player.stepHeight = (float) 0.75;
-
-        }
-
-
+        mc.player.stepHeight = (float) stepHeight.getCurrentValueDouble();
     }
 
     @Override
     public void onEnable() {
         //Once, when enabled
         super.onEnable(); //THIS IS ESSENTIAL
-        mc.player.stepHeight = (float) StepHeight.getCurrentValueInt();
+        mc.player.stepHeight = (float) stepHeight.getCurrentValueDouble();
     }
 
     @Override

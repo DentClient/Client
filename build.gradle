@@ -27,9 +27,9 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	compile "com.github.ZeroMemes:Alpine:1.5"
+
 	compile "com.lukflug:panelstudio:0.1.8"
-	compile "com.lukflug:panelstudio-mc16:0.1.8"
+	modCompile "com.lukflug:panelstudio-mc16:0.1.8"
 }
 
 processResources {
