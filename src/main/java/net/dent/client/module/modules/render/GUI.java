@@ -18,7 +18,6 @@ public class GUI extends Module {
     public void onEnable() {
         super.onEnable();
         DentClient.instance.gui.enterGUI();
-
         toggle();
     }
 }

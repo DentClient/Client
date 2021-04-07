@@ -55,9 +55,10 @@ public class Guey extends MinecraftGUI {
         // Populate the ClickGUI with modules and settings
         int x = 1;
         int y = 5;
+        int width = 50;
 
         for (Category category: Category.values()) {
-            DraggableContainer panel = new DraggableContainer(category.toString(),null, theme.getPanelRenderer(),new SimpleToggleable(false),new SettingsAnimation(GUISettings.animationSpeed),null, new Point(x, y), 50); // <-- Width and default position of the panels needs to be defined
+            DraggableContainer panel = new DraggableContainer(category.toString(),null, theme.getPanelRenderer(),new SimpleToggleable(false),new SettingsAnimation(GUISettings.animationSpeed),null, new Point(x, y), width); // <-- Width and default position of the panels needs to be defined
             gui.addComponent(panel);
 
             for (Module module: ModuleManager.getModulesForCategory(category)) {
@@ -74,6 +75,8 @@ public class Guey extends MinecraftGUI {
                 }
                 container.addComponent(new KeybindComponent(theme.getComponentRenderer(), GuiUtils.codeToKeybindSetting(module)));
             }
+
+            x += width + 10;
         }
     }
 
